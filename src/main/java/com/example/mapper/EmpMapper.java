@@ -16,15 +16,15 @@ public interface EmpMapper {
 	@Select("select * from emp")
 	List<Emp> selectAll();
 	
-//	@Select("select * from emp where empno=#{empno}")
-//	Emp selectByempno(int empno);
-//	
-//	@Insert("insert into emp values (#{empno}, #{dname}, #{loc}")
-//	int insert (Emp emp);
-//	
-//	@Update("update emp set ename=#{ename}, loc=#{loc} where empno=#{empno}")
-//	int updateByempno (Emp emp);
-//
-//	@Delete("delete from emp where empno=#{empno}")
-//	int deleteByempno (Emp empno);
+	@Select("select * from emp where empno=#{empno}")
+	Emp selectByempno(int empno);
+	
+	@Insert("insert into emp values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}")
+	int insert (Emp emp);
+	
+	@Update("update emp set ename=#{ename}, job=#{job}, mrg=#{mgr}, hiredate=#{hiredate}, sal=#{sal}, comm=#{comm} where empno=#{empno}")
+	int updateByempno (Emp emp);
+
+	@Delete("delete from emp where empno=#{empno}")
+	int deleteByempno (Emp empno);
 }

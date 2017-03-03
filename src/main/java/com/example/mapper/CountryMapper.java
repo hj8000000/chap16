@@ -16,15 +16,17 @@ public interface CountryMapper {
 	@Select("select * from country")
 	List<Country> selectAll();
 	
-//	@Select("select * from emp where empno=#{empno}")
-//	Emp selectByempno(int empno);
+	List<Country> selectAllWithCity();
+	
+	@Select("select * from country where code=#{code}")
+	Country selectByCode(String code);
 //	
 //	@Insert("insert into emp values (#{empno}, #{dname}, #{loc}")
-//	int insert (Emp emp);
+//	int insert (Country country);
 //	
 //	@Update("update emp set ename=#{ename}, loc=#{loc} where empno=#{empno}")
-//	int updateByempno (Emp emp);
+//	int updateByCode (Country country);
 //
 //	@Delete("delete from emp where empno=#{empno}")
-//	int deleteByempno (Emp empno);
+//	int deleteByCode (Country code);
 }

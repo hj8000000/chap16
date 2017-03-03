@@ -33,8 +33,20 @@ public class CountryMapperTests {
 	}
 	
 	@Test
-	public void test02_selectByEmptno() {
+	public void test01_selectAllWithCity() {
+		List<Country> list = mapper.selectAllWithCity();
 		
+		for(Country country : list) {
+			System.out.println(country);
+		}
+	}
+	
+	
+	@Test
+	public void test02_selectByCode() {
+		Country country = mapper.selectByCode("USA");
+		
+		System.out.println("country = " + country);
 	}
 	
 	@Test
@@ -43,12 +55,12 @@ public class CountryMapperTests {
 	}
 	
 	@Test
-	public void test04_updateByEmptno() {
+	public void test04_updateByCode() {
 		
 	}
 	
 	@Test
-	public void test05_deleteByEmpno() {
+	public void test05_deleteByCode() {
 		
 	}
 }

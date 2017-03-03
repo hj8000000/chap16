@@ -1,6 +1,7 @@
 package com.example.domain;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,6 +23,17 @@ public class Country {
 	private String headOfState;
 	private BigDecimal capital;
 	private String code2;
+
+	// country 와 city 의 관계는 1:N 관계
+	private List<City> citys;
+	
+	public List<City> getCitys() {
+		return citys;
+	}
+
+	public void setCitys(List<City> citys) {
+		this.citys = citys;
+	}
 
 	@Override
 	public String toString() {

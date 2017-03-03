@@ -22,3 +22,5 @@ select * from guestbook_message;
 insert into guestbook_message
 values
 (message_id_seq.nextval, 'xxx', '1234', 'hello...');
+
+delete from guestbook_message where message_id= 10020;
